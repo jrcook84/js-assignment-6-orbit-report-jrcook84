@@ -6,10 +6,9 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor = "let information of satellites ">
+    <tr class="data-row" *ngFor = "let information of satellites"[class.stripes]="satellites.indexOf(information)%2===0" >
         <td>{{information.name}}</td>
-        <td [class.warning] = "information.isSpaceDebris()">
-            {{information.type}}</td>
+        <td [class.warning] = "information.isSpaceDebris()">{{information.type}}</td>
         <td>{{information.operational}}</td>
         <td>{{information.orbitType}}</td>
         <td>{{information.launchDate}}</td>
